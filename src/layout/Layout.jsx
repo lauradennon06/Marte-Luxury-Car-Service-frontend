@@ -1,14 +1,16 @@
-import { Outlet } from "react-router";
-
-import Navbar from "./Navbar";
+import { Outlet, useLocation } from "react-router";
+import Footer from "./Footer";
+import TopNav from "./TopNav";
 
 export default function Layout() {
+  const { pathname } = useLocation();
   return (
     <>
-      <Navbar />
+      {pathname === "/" && <TopNav />}
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }

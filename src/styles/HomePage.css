@@ -1,0 +1,381 @@
+/* Home Page Styling */
+:root {
+  --primary-beige: #ddd0c8;
+  --dark-grey: #323232;
+  --text-dark: #323232;
+  --text-light: #666666;
+  --warm-ivory: #f3f0ea;
+  --champagne-accent: #a88f68;
+  --dark-blue-gray: #252b30;
+  --text-body: #343434;
+  --text-secondary: #5b5b5b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-beige);
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--primary-beige);
+  background-image: url("../assets/emiliano-bar-kheTI8pIywU-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(221, 208, 200, 0.3);
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--text-dark);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: var(--dark-grey);
+  font-family: "Playfair Display", serif;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-family: "Playfair Display", serif;
+  padding-bottom: 3rem;
+}
+
+.service-coverage {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  padding: 0.7rem 2rem;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  background-color: #4a4a4a;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section */
+.about {
+  padding: 5rem 2rem;
+  background-color: var(--primary-beige);
+  background-image:
+    linear-gradient(rgba(221, 208, 200, 0.401), rgba(221, 208, 200, 0.7)),
+    url("../assets/emiliano-bar-kheTI8pIywU-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.about-content {
+  padding: 2rem;
+  background-color: var(--warm-ivory);
+  border: 2px solid var(--champagne-accent);
+  border-radius: 4px;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.25),
+    0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue-gray);
+  text-align: center;
+  border-bottom: 2px solid var(--champagne-accent);
+  padding-bottom: 1rem;
+}
+
+.about-description {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--text-body);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature {
+  background-color: var(--warm-ivory);
+  border-radius: 4px;
+  border-left: 3px solid var(--champagne-accent);
+  border-top: 3px solid var(--champagne-accent);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-content {
+  padding: 0.8rem;
+  text-align: center;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature h3 {
+  color: var(--dark-blue-gray);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.feature p {
+  color: var(--text-body);
+  margin-bottom: 0;
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+}
+
+.feature-image {
+  width: 100%;
+  height: 280px;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Amenities Section */
+.amenities {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+
+/* iPhone Viewport (440px) */
+
+/* Extra small phones (440px) */
+
+/* Cars Carousel Section */
+.cars-carousel {
+  padding: 2rem 1rem;
+  background: var(--primary-beige);
+  background-image: url("../assets/emiliano-bar-kheTI8pIywU-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.cars-carousel::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(221, 208, 200, 0.3);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.carousel-container {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 1.5rem 2rem;
+  z-index: 1;
+  background-color: transparent;
+  border: 3px solid rgba(50, 50, 50, 0.3);
+  border-radius: 4px;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.25),
+    0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cars-heading {
+  font-size: 2rem;
+  color: var(--dark-grey);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cars-subheading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.cars-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-link {
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+  flex: 1;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  animation: fadeIn 0.8s ease-in-out;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+  border-radius: 0px;
+  padding: 1px;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  aspect-ratio: 1;
+}
+
+.carousel-image:hover {
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cars-licensing {
+  text-align: center;
+  background-color: rgba(236, 211, 211, 0.501);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-grey);
+  margin-top: 2rem;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+}
+
+.cars-licensing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-items: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cars-licensing-item {
+  display: flex;
+  width: 100%;
+  padding: 3px 4px;
+  margin: 0;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: black;
+  background-color: rgba(236, 211, 211, 0.501);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  letter-spacing: 0.5px;
+  flex-direction: row;
+  text-align: center;
+  gap: 0.3rem;
+}
+
+.checkmark {
+  font-size: 1rem;
+  color: var(--dark-grey);
+  margin-right: 0;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

@@ -1,0 +1,60 @@
+/* Global Styles */
+:root {
+  --primary-beige: #ddd0c8;
+  --dark-grey: #323232;
+  --text-dark: #323232;
+  --text-light: #666666;
+  --accent-grey: #707070;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-beige);
+  color: var(--text-dark);
+  line-height: 1.8;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  min-height: calc(100vh - 60px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-grey);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}

@@ -1,0 +1,144 @@
+/* Accounts Management Styling */
+.accounts-management {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--primary-beige);
+  color: var(--text-dark);
+}
+
+.accounts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.accounts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--dark-grey);
+}
+
+.accounts-header h1 {
+  font-size: 2.2rem;
+  color: var(--dark-grey);
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+.back-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.back-btn:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+.loading,
+.error,
+.no-accounts {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: var(--dark-grey);
+}
+
+.error {
+  background-color: #f8e8e8;
+  border: 2px solid #d4a5a5;
+  color: #c41e1e;
+  border-radius: 2px;
+}
+
+.no-accounts {
+  background-color: #ffffff;
+  border: 2px solid #ddd0c8;
+  border-radius: 2px;
+}
+
+.accounts-table-wrapper {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #ddd0c8;
+}
+
+.accounts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.accounts-table thead {
+  background-color: #f0e8e0;
+}
+
+.accounts-table th {
+  padding: 1rem;
+  text-align: left;
+  color: var(--dark-grey);
+  font-weight: 600;
+  border-bottom: 2px solid var(--dark-grey);
+  white-space: nowrap;
+}
+
+.accounts-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd0c8;
+  color: var(--text-light);
+}
+
+.accounts-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.account-type {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.account-type.individual {
+  background-color: #e0f4f8;
+  color: #0d5a6d;
+}
+
+.account-type.business {
+  background-color: #f0e8f5;
+  color: #5a2d7a;
+}
+
+.view-btn {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.view-btn:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+

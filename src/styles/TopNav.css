@@ -1,0 +1,37 @@
+/* Top nav: transparent so it blends into the hero background */
+.top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 1.5rem 2rem;
+  background: transparent;
+}
+
+.top-nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  list-style: none;
+}
+
+.top-nav-link {
+  color: var(--dark-blue-gray);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.top-nav-link:hover {
+  opacity: 0.65;
+}
+

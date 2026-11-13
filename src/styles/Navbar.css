@@ -1,0 +1,106 @@
+/* Navbar Styling */
+.navbar {
+  background-color: var(--primary-beige);
+  padding: 1.5rem 0;
+  box-shadow: 0 -2px 8px rgba(50, 50, 50, 0.1);
+  border-top: 2px solid var(--dark-grey);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark-grey);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-grey);
+}
+
+.nav-link.admin-link {
+  color: var(--dark-grey);
+  font-weight: 600;
+  border: 2px solid var(--dark-grey);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-link.admin-link:hover {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+
+.auth-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.auth-btn:hover {
+  background-color: #4a4a4a;
+}
+
+.register-btn {
+  background-color: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+}
+
+.register-btn:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+.logout-btn {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+.login-btn {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+

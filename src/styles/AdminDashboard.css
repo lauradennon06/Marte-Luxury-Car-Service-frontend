@@ -1,0 +1,987 @@
+/* Admin Dashboard Styling - Gold colors removed */
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--primary-beige);
+  color: var(--text-dark);
+}
+
+.admin-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--dark-grey);
+}
+
+.admin-header h1 {
+  font-size: 2.2rem;
+  color: var(--dark-grey);
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+.admin-header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.accounts-btn,
+.schedule-ride-btn,
+.search-rides-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.accounts-btn:hover,
+.schedule-ride-btn:hover,
+.search-rides-btn:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+.filter-section {
+  margin-bottom: 2rem;
+}
+
+.filter-section h2 {
+  font-size: 1.3rem;
+  color: var(--dark-grey);
+  margin-bottom: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #ffffff;
+  color: var(--dark-grey);
+  border: 2px solid var(--dark-grey);
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+
+.filter-btn.active {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+
+.loading,
+.error,
+.no-rides {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: var(--dark-grey);
+}
+
+.error {
+  background-color: #f8e8e8;
+  border: 2px solid #d4a5a5;
+  color: #c41e1e;
+  border-radius: 2px;
+}
+
+.no-rides {
+  background-color: #ffffff;
+  border: 2px solid #ddd0c8;
+  border-radius: 2px;
+}
+
+.rides-table-wrapper {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #ddd0c8;
+}
+
+.rides-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.rides-table thead {
+  background-color: #f0e8e0;
+}
+
+.rides-table th {
+  padding: 1rem;
+  text-align: left;
+  color: var(--dark-grey);
+  font-weight: 600;
+  border-bottom: 2px solid var(--dark-grey);
+  white-space: nowrap;
+}
+
+.rides-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd0c8;
+  color: var(--text-light);
+}
+
+.rides-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background-color: #4d3a1a;
+  color: #cccccc;
+}
+
+.status-approved {
+  background-color: #1a4d2e;
+  color: #90ee90;
+}
+
+.status-completed {
+  background-color: #1a3a4d;
+  color: #87ceeb;
+}
+
+.status-cancelled {
+  background-color: #4d1a1a;
+  color: #ff6b6b;
+}
+
+.account-link {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.account-link:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background-color: #c41e1e;
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.delete-btn:hover {
+  background-color: #8a1515;
+  transform: translateY(-2px);
+}
+
+.anonymous {
+  color: #888888;
+  font-style: italic;
+}
+
+/* Schedule Ride Modal */
+.schedule-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.schedule-modal {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.schedule-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--dark-grey);
+}
+
+.schedule-modal-header h2 {
+  font-size: 1.8rem;
+  color: var(--dark-grey);
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--dark-grey);
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #c41e1e;
+}
+
+.schedule-error {
+  background-color: #f8e8e8;
+  border: 2px solid #d4a5a5;
+  color: #c41e1e;
+  padding: 1rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-section h3 {
+  font-size: 1.1rem;
+  color: var(--dark-grey);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.schedule-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.schedule-form label {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.schedule-form input,
+.schedule-form select,
+.schedule-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd0c8;
+  border-radius: 2px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: #ffffff;
+}
+
+.schedule-form input:focus,
+.schedule-form select:focus,
+.schedule-form textarea:focus {
+  outline: none;
+  border-color: var(--dark-grey);
+  box-shadow: 0 0 0 3px rgba(50, 50, 50, 0.1);
+}
+
+.schedule-form textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.schedule-form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd0c8;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.cancel-btn {
+  background-color: #e8e8e8;
+  color: var(--text-dark);
+}
+
+.cancel-btn:hover {
+  background-color: #d4d4d4;
+  transform: translateY(-2px);
+}
+
+.submit-btn {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Search Form Styling */
+.search-form-section {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-form-section h3 {
+  font-size: 1.2rem;
+  color: var(--dark-grey);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.search-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-form-group label {
+  font-weight: 600;
+  color: var(--dark-grey);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.search-form-group select,
+.search-form-group input {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.search-form-group select:focus,
+.search-form-group input:focus {
+  outline: none;
+  border-color: var(--dark-grey);
+  box-shadow: 0 0 0 2px rgba(50, 50, 50, 0.1);
+}
+
+.search-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.search-btn:hover {
+  background-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+.search-results {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f0f0f0;
+  border-left: 4px solid var(--dark-grey);
+  border-radius: 2px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* Expandable Ride Details */
+.expand-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  padding: 0;
+  color: var(--slate);
+}
+
+.view-btn,
+.confirm-btn,
+.edit-btn,
+.cancel-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.view-btn {
+  background-color: var(--slate);
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #5a6270;
+}
+
+.confirm-btn {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.confirm-btn:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.confirm-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.edit-btn:hover {
+  background-color: #0b7dda;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background-color: #da190b;
+}
+
+.cancel-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.ride-details-row {
+  background-color: #f9f9f9;
+  border-top: 2px solid #e0e0e0;
+}
+
+.ride-details-row td {
+  padding: 1.5rem;
+}
+
+.ride-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ride-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-item label {
+  font-weight: 600;
+  color: var(--dark-grey);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.detail-item span {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.detail-item .status-badge {
+  display: inline-block;
+  width: fit-content;
+}
+
+.ride-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.price-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--champagne-accent);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.price-btn:hover {
+  background-color: #935a29;
+  transform: translateY(-2px);
+}
+
+.price-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.price-form-inline {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1rem;
+}
+
+.price-form-inline input {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 0.9rem;
+}
+
+.submit-price-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--champagne-accent);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.submit-price-btn:hover {
+  background-color: #935a29;
+}
+
+.submit-price-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive Styles for iPhone */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+
+  .admin-container {
+    max-width: 100%;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .admin-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .admin-header-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .accounts-btn,
+  .schedule-ride-btn,
+  .search-rides-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .filter-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Search Form Mobile */
+  .search-form-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-form-section h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .search-form-group {
+    margin-bottom: 0.5rem;
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  /* Table Mobile - Convert to card layout */
+  .rides-table-wrapper {
+    overflow-x: visible;
+  }
+
+  .rides-table {
+    font-size: 0.85rem;
+  }
+
+  .rides-table thead {
+    display: none;
+  }
+
+  .rides-table tbody,
+  .rides-table tr,
+  .rides-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .rides-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd0c8;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 1rem;
+    background-color: #ffffff;
+  }
+
+  .rides-table tbody tr:hover {
+    background-color: #ffffff;
+  }
+
+  .rides-table td {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0e8e0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2rem;
+  }
+
+  .rides-table td:last-child {
+    border-bottom: none;
+  }
+
+  .rides-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--dark-grey);
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+  }
+
+  /* Hide mobile table pseudo-labels for expand/action cells */
+  .ride-row td:first-child::before {
+    content: "";
+  }
+
+  .ride-row td:nth-child(8)::before {
+    content: "";
+  }
+
+  /* Modal Mobile */
+  .schedule-modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .schedule-modal {
+    max-width: 100%;
+    max-height: 95vh;
+    padding: 1.5rem 1rem;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .schedule-modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .close-btn {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .schedule-form-actions {
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Ride Details Mobile */
+  .ride-details-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0e8e0;
+  }
+
+  .detail-item label {
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .detail-item span {
+    font-size: 0.9rem;
+    text-align: right;
+    flex: 1;
+  }
+
+  .detail-item.full-width {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-item.full-width span {
+    text-align: left;
+    margin-top: 0.25rem;
+  }
+
+  /* Actions Mobile */
+  .ride-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .view-btn,
+  .confirm-btn,
+  .edit-btn,
+  .cancel-btn,
+  .price-btn {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Price Form Mobile */
+  .price-form-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    margin-top: 0.75rem;
+  }
+
+  .price-form-inline input {
+    min-width: 100%;
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .submit-price-btn {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .expand-btn {
+    margin-right: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  /* Font size fixes */
+  .rides-table td {
+    font-size: 0.8rem;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-dashboard {
+    padding: 0.75rem;
+  }
+
+  .admin-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .filter-section h2 {
+    font-size: 1rem;
+  }
+
+  .schedule-modal {
+    padding: 1rem 0.75rem;
+  }
+
+  .schedule-form input,
+  .schedule-form select,
+  .schedule-form textarea {
+    font-size: 16px;
+  }
+
+  .ride-details-row td {
+    padding: 1rem 0.75rem;
+  }
+
+  .rides-table tr {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+
+  .detail-item label {
+    font-size: 0.7rem;
+  }
+
+  .detail-item span {
+    font-size: 0.85rem;
+  }
+}

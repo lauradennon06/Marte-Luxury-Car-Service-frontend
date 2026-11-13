@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
 
 const API = import.meta.env.VITE_API;
 
@@ -6,21 +7,22 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(sessionStorage.getItem("token"));
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    if (token) sessionStorage.setItem("token", token);
+    if (token) {
+      sessionStorage.setItem("token", token);
+      // Decode token to get user info
+      try {
+        const decoded = jwtDecode(token);
+        setUser(decoded);
+      } catch (err) {
+        console.error("Failed to decode token", err);
+      }
+    } else {
+      setUser(null);
+    }
   }, [token]);
-
-  const register = async (credentials) => {
-    const response = await fetch(API + "/users/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(credentials),
-    });
-    const result = await response.text();
-    if (!response.ok) throw Error(result);
-    setToken(result);
-  };
 
   const login = async (credentials) => {
     const response = await fetch(API + "/users/login", {
@@ -38,7 +40,7 @@ export function AuthProvider({ children }) {
     sessionStorage.removeItem("token");
   };
 
-  const value = { token, register, login, logout };
+  const value = { token, user, login, logout };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

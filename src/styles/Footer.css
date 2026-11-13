@@ -1,0 +1,115 @@
+/* Footer/Navbar Combined Styling */
+.footer {
+  background-color: var(--dark-grey);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: #e8e8e8;
+  position: relative;
+}
+
+.footer-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-link {
+  color: #e8e8e8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-nav-link:hover {
+  color: #ffffff;
+}
+
+.footer-auth-btn {
+  padding: 0.2rem 1.5rem;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  text-transform: none;
+  text-align: center;
+}
+
+.footer-auth-btn:hover {
+  background-color: #4a4a4a;
+  transform: scale(1.05);
+}
+
+.login-btn {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+
+.logout-btn {
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+}
+
+.admin-login-trigger {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.admin-login-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--dark-grey);
+  color: var(--primary-beige);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.admin-login-link:hover {
+  background-color: #4a4a4a;
+  transform: scale(1.05);
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #e8e8e8;
+}
+
+.footer-content a {
+  color: #e8e8e8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
